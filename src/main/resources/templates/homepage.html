@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Homepage</title>
+	</head>
+	<body>
+		<h1>
+			<font color="green">HomePage</font>
+		</h1>
+		<p>
+		<h3>程序说明:</h3><br>
+		本程序实现了对API的限流功能：以下是测试API<br/>
+		http://localhost:8080/request?userlicense=jeremyjia<br/>
+		同时,设计了JUnit单元测试用例, 对上面的API进行了并发下的限流测试,
+		当运行mvn clean install的时候会执行测试用例<br/>
+		当限流发生时会发送message:API rate limit exceeded for user jeremyjia<br>
+	</body>
+</html>
