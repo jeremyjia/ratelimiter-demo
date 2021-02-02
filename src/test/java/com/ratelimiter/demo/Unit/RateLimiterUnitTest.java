@@ -94,7 +94,7 @@ public class RateLimiterUnitTest {
 					try {
 						operator.request("Ming");
 						count.incrementAndGet();
-						Thread.sleep(frequency);
+						Thread.sleep(frequency+1);
 					} catch (Exception e) {
 					} finally {
 						latch.countDown();
