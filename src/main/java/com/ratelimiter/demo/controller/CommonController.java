@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ratelimiter.demo.exception.RateLimiterException;
@@ -19,8 +19,7 @@ public class CommonController {
 	private RateLimiterService limiter;
 
 	@RequestMapping(value = "/request", method = RequestMethod.GET)
-	@ResponseBody
-	public Map<String, Object> request(String userlicense) throws Exception {
+	public Map<String, Object> request(@RequestParam(name = "userlicense") String userlicense) throws Exception {
 
 		Map<String, Object> status = new HashMap<String, Object>();
 		if (limiter.isLimited(userlicense)) {
